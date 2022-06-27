@@ -27,7 +27,7 @@ const {
                   type:new GraphQLList( ProjectType),
                   resolve:async(parent,args)=>{
                         try {
-                              const project = await pool.query("SELECT * FROM projects WHERE clientId =$1",[parent.id]);
+                              const project = await pool.query("SELECT * FROM projects WHERE clientid =$1",[parent.id]);
 
                               // console.log(project);
                               return project.rows
