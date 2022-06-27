@@ -53,10 +53,10 @@ const {
                   type: ClientType,
                   resolve:async(parent,args)=>{
                         try {
-                              const clientwe = await pool.query("SELECT * FROM clients WHERE Id=$1",[parent.clientid]);
+                              const clientwe = await pool.query("SELECT * FROM clients WHERE id=$1",[parent.clientid]);
 
-                              // console.log(parent.id);
-                              return clientwe.rows
+                              // console.log(parent);
+                              return clientwe.rows[0]
                               
                         } catch (error) {
                               return error.message
